@@ -1,3 +1,5 @@
+using DotNet_OneToMany_Dish.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
