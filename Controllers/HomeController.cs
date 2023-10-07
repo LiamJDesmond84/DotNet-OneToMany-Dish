@@ -19,8 +19,11 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+    [HttpGet("")]
     public IActionResult Index()
     {
+        ViewBag.Chefs = _context.Chefs.Select(x => x.Dishes).ToList();
+
         return View();
     }
 
