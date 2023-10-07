@@ -11,12 +11,11 @@ public class HomeController : Controller
     private readonly ILogger<HomeController> _logger;
 
     // DbContext injection
-    private AppContext dbContext;
+    private AppDbContext _context;
 
-    // here we can "inject" our context service into the constructor
-    public HomeController(AppContext context, ILogger<HomeController> logger)
+    public HomeController(AppDbContext context, ILogger<HomeController> logger)
     {
-        dbContext = context;
+        _context = context;
         _logger = logger;
     }
 
