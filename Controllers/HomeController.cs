@@ -1,15 +1,22 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using DotNet_OneToMany_Dish.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DotNet_OneToMany_Dish.Controllers;
 
 public class HomeController : Controller
+
 {
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    // DbContext injection
+    private AppContext dbContext;
+
+    // here we can "inject" our context service into the constructor
+    public HomeController(AppContext context, ILogger<HomeController> logger)
     {
+        dbContext = context;
         _logger = logger;
     }
 
