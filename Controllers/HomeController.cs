@@ -54,7 +54,12 @@ public class HomeController : Controller
 
     public IActionResult EditChef(Chef chef)
     {
-        if (ViewData.ModelState.IsValid) {
+        if (!ViewData.ModelState.IsValid) {
+            return View();
+        }
+
+        else
+        {
             var chefToUpdate = _context.Chefs.FirstOrDefault(x => x.Id == chef.Id);
 
             chefToUpdate.Age = chef.Age;
@@ -62,8 +67,6 @@ public class HomeController : Controller
             chefToUpdate.DOB = chef.DOB;
             return RedirectToAction("Index");
         }
-
-        return View();
     }
 
     public IActionResult EditDish(Dish dish)
