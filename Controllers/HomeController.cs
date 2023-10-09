@@ -52,13 +52,14 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult EditChef()
+    public IActionResult EditChef(Chef chef)
     {
         return View();
     }
 
-    public IActionResult EditDish()
+    public IActionResult EditDish(Dish dish)
     {
+        var dishToUpdate = _context.Dishes.Where(x => x.Id == dish.Id);
         return View();
     }
 }
