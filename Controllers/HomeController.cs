@@ -72,6 +72,11 @@ public class HomeController : Controller
     public IActionResult EditDish(Dish dish)
     {
         var dishToUpdate = _context.Dishes.FirstOrDefault(x => x.Id == dish.Id);
+
+        dishToUpdate.Description = dish.Description;
+        dishToUpdate.ChefName = dish.ChefName;
+        dishToUpdate.Tastiness = dish.Tastiness;
+        dishToUpdate.Name = dish.Name;
         return View();
     }
 }
