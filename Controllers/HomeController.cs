@@ -45,8 +45,10 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult CreateDish()
+    public IActionResult CreateDish(Dish dish)
     {
+        _context.Dishes.Add(dish);
+        _context.SaveChanges();
         return View();
     }
 
