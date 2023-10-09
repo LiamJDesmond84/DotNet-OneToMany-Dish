@@ -85,6 +85,7 @@ public class HomeController : Controller
         dishToUpdate.Name = dish.Name;
 
         _context.SaveChanges();
+            return RedirectToAction("Index");
         }
 
     }
