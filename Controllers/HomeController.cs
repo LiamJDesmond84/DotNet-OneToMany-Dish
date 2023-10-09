@@ -54,12 +54,13 @@ public class HomeController : Controller
 
     public IActionResult EditChef(Chef chef)
     {
+        var chefToUpdate = _context.Chefs.FirstOrDefault(x => x.Id == chef.Id);
         return View();
     }
 
     public IActionResult EditDish(Dish dish)
     {
-        var dishToUpdate = _context.Dishes.Where(x => x.Id == dish.Id);
+        var dishToUpdate = _context.Dishes.FirstOrDefault(x => x.Id == dish.Id);
         return View();
     }
 }
