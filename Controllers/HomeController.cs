@@ -55,6 +55,10 @@ public class HomeController : Controller
     public IActionResult EditChef(Chef chef)
     {
         var chefToUpdate = _context.Chefs.FirstOrDefault(x => x.Id == chef.Id);
+
+        chefToUpdate.Age = chef.Age;
+        chefToUpdate.Name = chef.Name;
+        chefToUpdate.DOB = chef.DOB;
         return View();
     }
 
