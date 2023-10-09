@@ -38,8 +38,10 @@ public class HomeController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 
-    public IActionResult CreateChef()
+    public IActionResult CreateChef(Chef chef)
     {
+        _context.Chefs.Add(chef);
+        _context.SaveChanges();
         return View();
     }
 
