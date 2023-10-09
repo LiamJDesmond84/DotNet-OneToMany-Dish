@@ -42,4 +42,19 @@ public class HomeController : Controller
     {
         return View();
     }
+
+    public IActionResult CreateDish()
+    {
+        return View();
+    }
+
+    public IActionResult EditChef()
+    {
+        return View();
+    }
+
+    public IActionResult EditDish()
+    {
+        return View();
+    }
 }
