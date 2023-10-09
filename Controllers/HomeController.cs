@@ -72,6 +72,11 @@ public class HomeController : Controller
 
     public IActionResult EditDish(Dish dish)
     {
+        if (!ViewData.ModelState.IsValid)
+        {
+            return View();
+        }
+        else { 
         var dishToUpdate = _context.Dishes.FirstOrDefault(x => x.Id == dish.Id);
 
         dishToUpdate.Description = dish.Description;
@@ -80,6 +85,7 @@ public class HomeController : Controller
         dishToUpdate.Name = dish.Name;
 
         _context.SaveChanges();
-        return View();
+        }
+
     }
 }
