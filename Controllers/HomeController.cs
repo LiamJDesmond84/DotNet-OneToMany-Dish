@@ -76,7 +76,8 @@ public class HomeController : Controller
         {
             return View();
         }
-        else { 
+        else 
+        { 
         var dishToUpdate = _context.Dishes.FirstOrDefault(x => x.Id == dish.Id);
 
         dishToUpdate.Description = dish.Description;
