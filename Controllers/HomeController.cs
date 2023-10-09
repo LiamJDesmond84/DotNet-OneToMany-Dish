@@ -65,6 +65,7 @@ public class HomeController : Controller
             chefToUpdate.Age = chef.Age;
             chefToUpdate.Name = chef.Name;
             chefToUpdate.DOB = chef.DOB;
+            _context.SaveChanges();
             return RedirectToAction("Index");
         }
     }
@@ -77,6 +78,8 @@ public class HomeController : Controller
         dishToUpdate.ChefName = dish.ChefName;
         dishToUpdate.Tastiness = dish.Tastiness;
         dishToUpdate.Name = dish.Name;
+
+        _context.SaveChanges();
         return View();
     }
 }
