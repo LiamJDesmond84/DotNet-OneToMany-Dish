@@ -14,6 +14,6 @@ namespace DotNet_OneToMany_Dish.Models
         [DataType(DataType.Date)]
         public DateTime DOB { get; set; }
 
-        public List<Dish> Dishes { get; set; }
+        public List<Dish>? Dishes { get; set; }
     }
 }
