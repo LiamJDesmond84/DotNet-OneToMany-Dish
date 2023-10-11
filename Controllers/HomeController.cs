@@ -42,7 +42,7 @@ public class HomeController : Controller
     {
         _context.Chefs.Add(chef);
         _context.SaveChanges();
-        return View();
+        return View("CreateChef");
     }
 
     public IActionResult CreateDish(Dish dish)
