@@ -40,9 +40,17 @@ public class HomeController : Controller
 
     public IActionResult CreateChef(Chef chef)
     {
-        _context.Chefs.Add(chef);
-        _context.SaveChanges();
-        return View("CreateChef");
+        if (!ViewData.ModelState.IsValid)
+        {
+            return View("CreateChef");
+        }
+        else
+        {
+            _context.Chefs.Add(chef);
+            _context.SaveChanges();
+        }
+       
+        
     }
 
     public IActionResult CreateDish(Dish dish)
