@@ -48,6 +48,7 @@ public class HomeController : Controller
         {
             _context.Chefs.Add(chef);
             _context.SaveChanges();
+            return View("Index");
         }
        
         
