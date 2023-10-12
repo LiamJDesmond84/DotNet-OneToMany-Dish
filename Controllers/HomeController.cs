@@ -22,9 +22,9 @@ public class HomeController : Controller
     [HttpGet("")]
     public IActionResult Index()
     {
-        ViewBag.Chefs = _context.Chefs.ToList();
+        List<Chef> chefs = _context.Chefs.ToList();
 
-        return View();
+        return View(chefs);
     }
 
     public IActionResult Privacy()
@@ -40,6 +40,7 @@ public class HomeController : Controller
 
     public IActionResult CreateChefView()
     {
+        ViewBag.Chefs = _context.Chefs.ToList();
         return View("CreateChef");
     }
 
