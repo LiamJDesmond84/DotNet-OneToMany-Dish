@@ -40,7 +40,7 @@ public class HomeController : Controller
 
     public IActionResult CreateChefView()
     {
-        ViewBag.Chefs = _context.Chefs.ToList();
+
         return View("CreateChef");
     }
 
@@ -62,6 +62,7 @@ public class HomeController : Controller
 
     public IActionResult CreateDishView()
     {
+        ViewBag.Chefs = _context.Chefs.ToList();
         return View("CreateDish");
     }
 
