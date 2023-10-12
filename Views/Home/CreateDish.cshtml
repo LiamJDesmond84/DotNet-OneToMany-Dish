@@ -7,10 +7,10 @@
         <input asp-for="Name" type="text"/>
 
         <label asp-for="Calories">Calories</label>
-        <input asp-for="Calories" type="text" />
+        <input asp-for="Calories" type="number" />
 
         <label asp-for="Tastiness">Tastiness</label>
-        <input asp-for="Tastiness" type="text" />
+        <input asp-for="Tastiness" type="number" />
 
         <label asp-for="Description">Description</label>
         <input asp-for="Description" type="text" />
@@ -21,7 +21,7 @@
             @{
                 foreach(var x in ViewBag.Chefs)
                 {
-                    <option>@x.Name</option>
+                    <option value="@x.Id">@x.Name</option>
                 }
             }
            
