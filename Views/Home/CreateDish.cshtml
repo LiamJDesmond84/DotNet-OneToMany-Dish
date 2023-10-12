@@ -1,4 +1,5 @@
 ﻿@model DotNet_OneToMany_Dish.Models.Dish
+@model List<Chef>
 
 <div>
     <form asp-action="CreateDish" asp-controller="Home" method="post">
@@ -8,11 +9,16 @@
         <label asp-for="Calories">Calories</label>
         <input asp-for="Calories" type="text" />
 
-        <label asp-for="Calories">Calories</label>
-        <input asp-for="Calories" type="text" />
+        <label asp-for="Tastiness">Tastiness</label>
+        <input asp-for="Tastiness" type="text" />
 
-        <label asp-for="Calories">Calories</label>
-        <input asp-for="Calories" type="text" />
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description" type="text" />
+
+        <label asp-for="Description">Description</label>
+        <select asp-for="ChefName">
+            <option>@x.</option>
+        </select>
 
         <button type="submit">Create Dish</button>
     </form>
