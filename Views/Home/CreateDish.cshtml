@@ -1,5 +1,5 @@
 ﻿@model DotNet_OneToMany_Dish.Models.Dish
-@model List<Chef>
+
 
 <div>
     <form asp-action="CreateDish" asp-controller="Home" method="post">
@@ -17,7 +17,14 @@
 
         <label asp-for="Description">Description</label>
         <select asp-for="ChefName">
-            <option>@x.</option>
+
+            @{
+                foreach(var x in ViewBag.Chefs)
+                {
+                    <option>@x.Name</option>
+                }
+            }
+           
         </select>
 
         <button type="submit">Create Dish</button>
