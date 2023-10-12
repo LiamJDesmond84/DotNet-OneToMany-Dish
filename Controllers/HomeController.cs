@@ -68,6 +68,9 @@ public class HomeController : Controller
 
     public IActionResult CreateDish(Dish dish)
     {
+
+        Chef chef = _context.Chefs.FirstOrDefault(c => c.Id == dish.ChefName.Id);
+
         _context.Dishes.Add(dish);
         _context.SaveChanges();
         return View();
