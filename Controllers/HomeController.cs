@@ -59,6 +59,11 @@ public class HomeController : Controller
         
     }
 
+    public IActionResult CreateDishView()
+    {
+        return View("CreateDish");
+    }
+
     public IActionResult CreateDish(Dish dish)
     {
         _context.Dishes.Add(dish);
