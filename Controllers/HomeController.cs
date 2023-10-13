@@ -68,6 +68,10 @@ public class HomeController : Controller
 
     public IActionResult CreateDish(Dish dish)
     {
+        if (!ViewData.ModelState.IsValid)
+        {
+            return View("CreateDish");
+        }
 
         _context.Dishes.Add(dish);
         _context.SaveChanges();
