@@ -16,10 +16,14 @@
         <input asp-for="Description" type="text" />
 
         <label asp-for="Description">Description</label>
-        <select asp-for="Chef" multiple="multiple" asp-items="@ViewBag.Chefs">
+        <select asp-for="Chef">
 
-            <option>Please select one</option>
-
+            @{
+                foreach(var x in ViewBag.Chefs)
+                {
+                    <option value="@x">@x.Name</option>
+                }
+            }
            
         </select>
 
