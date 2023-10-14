@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using DotNet_OneToMany_Dish.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Collections;
 
 namespace DotNet_OneToMany_Dish.Controllers;
 
@@ -63,7 +64,7 @@ public class HomeController : Controller
     public IActionResult CreateDishView()
     {
         //IEnumerable<Chef> chefs = _context.Chefs.ToList();
-        List<Chef> chefs = _context.Chefs.ToList();
+        var chefs = _context.Chefs.ToList();
         ViewBag.Chefs = chefs;
         return View("CreateDish");
     }
