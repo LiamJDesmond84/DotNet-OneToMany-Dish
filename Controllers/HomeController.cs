@@ -62,8 +62,9 @@ public class HomeController : Controller
 
     public IActionResult CreateDishView()
     {
+        IEnumerable<Chef> chefs = _context.Chefs.ToList();
         ViewBag.Chefs = _context.Chefs.ToList();
-        return View("CreateDish");
+        return View("CreateDish", chefs);
     }
 
     public IActionResult CreateDish(Dish dish)
