@@ -15,7 +15,10 @@
         <label asp-for="Description">Description</label>
         <input asp-for="Description" type="text" />
 
-        <label asp-for="Description">Chef</label>
+        <label asp-for="Chef">Chef</label>
+        <input asp-for="Chef" type="text" value="@ViewBag.Chef"/>
+
+@*         <label asp-for="Description">Chef</label>
         <select asp-for="Chef" name="Chef">
 
             @{
@@ -25,7 +28,7 @@
                 }
             }
            
-        </select>
+        </select> *@
 
         <button type="submit">Create Dish</button>
     </form>
