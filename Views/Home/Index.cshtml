@@ -12,7 +12,14 @@
         foreach(var x in Model)
         {
             <p>@x.Name</p>
+
+            foreach (var y in x.Dishes)
+            {
+                <p>@y.Description</p>
+            }
         }
+
+
 
 
 
