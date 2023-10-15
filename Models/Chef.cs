@@ -5,7 +5,7 @@ namespace DotNet_OneToMany_Dish.Models
     public class Chef
     {
         [Key]
-        public int Id { get; set; }
+        public int ChefId { get; set; }
 
         public string Name { get; set; }
 

@@ -85,7 +85,7 @@ public class HomeController : Controller
 
         else
         {
-            var chefToUpdate = _context.Chefs.FirstOrDefault(x => x.Id == chef.Id);
+            var chefToUpdate = _context.Chefs.FirstOrDefault(x => x.ChefId == chef.ChefId);
 
             chefToUpdate.Age = chef.Age;
             chefToUpdate.Name = chef.Name;
