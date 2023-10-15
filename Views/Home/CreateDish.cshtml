@@ -20,17 +20,18 @@
 @*         <select asp-for="Chef" class="form-control" asp-items="@(new SelectList(ViewBag.Chefs))">
             <option>-- Select Client --</option>
         </select> *@
-        @*@Html.DropDownListFor(x => x.Chef, new SelectList(ViewBag.Chefs)) *@
-         <select asp-for="Chef" name="ChefId">
+        @* @Html.DropDownListFor(x =>Chef, new SelectList(ViewBag.Chefs, "ChefId")) *@
+        @Html.DropDownListFor(x => x.Chef, new SelectList(ViewBag.Chefs, "ChefId", "Name"))
+@*          <select asp-for="Chef" name="Chef">
 
             @{
                 foreach(var x in ViewBag.Chefs)
                 {
-                    <option value="@x.ChefId">@x.Name</option>
+                    <option value="1">@x.Name</option>
                 }
             }
            
-        </select>
+        </select> *@
 
         <button type="submit">Create Dish</button>
     </form>
