@@ -24,7 +24,7 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         //List<Chef> chefs = _context.Chefs.ToList();
-        List<Dish> dishes = _context.Dishes.ToList();
+        List<Dish> dishes = _context.Dishes.Include(x => x.Chef).ToList();
 
         return View(dishes);
     }
