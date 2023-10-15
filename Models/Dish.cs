@@ -15,6 +15,8 @@ namespace DotNet_OneToMany_Dish.Models
 
         public string Description { get; set; }
 
+        public int ChefId { get; set; }
+
         public Chef Chef { get; set; }
     }
 }
