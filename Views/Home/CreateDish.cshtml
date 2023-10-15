@@ -25,7 +25,7 @@
 
         @* @Html.DropDownListFor(x => x.Chef, new SelectList(ViewBag.Chefs, "ChefId", "Name")) *@
 
-<select asp-for="ChefId" name="ChefId">
+        <select asp-for="ChefId" name="ChefId">
 
             @{
                 foreach(var x in ViewBag.Chefs)
