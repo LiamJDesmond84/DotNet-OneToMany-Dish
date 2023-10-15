@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DotNet_OneToMany_Dish.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231013000914_mig2")]
-    partial class mig2
+    [Migration("20231015164654_whatever")]
+    partial class whatever
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

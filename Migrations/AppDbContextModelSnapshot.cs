@@ -49,7 +49,7 @@ namespace DotNet_OneToMany_Dish.Migrations
                     b.Property<int>("Calories")
                         .HasColumnType("int");
 
-                    b.Property<int>("ChefIdId")
+                    b.Property<int>("ChefId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
@@ -65,20 +65,20 @@ namespace DotNet_OneToMany_Dish.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ChefIdId");
+                    b.HasIndex("ChefId");
 
                     b.ToTable("Dishes");
                 });
 
             modelBuilder.Entity("DotNet_OneToMany_Dish.Models.Dish", b =>
                 {
-                    b.HasOne("DotNet_OneToMany_Dish.Models.Chef", "ChefId")
+                    b.HasOne("DotNet_OneToMany_Dish.Models.Chef", "Chef")
                         .WithMany("Dishes")
-                        .HasForeignKey("ChefIdId")
+                        .HasForeignKey("ChefId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("ChefId");
+                    b.Navigation("Chef");
                 });
 
             modelBuilder.Entity("DotNet_OneToMany_Dish.Models.Chef", b =>

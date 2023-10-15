@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DotNet_OneToMany_Dish.Migrations
 {
     /// <inheritdoc />
-    public partial class initial2 : Migration
+    public partial class whatever : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -44,14 +44,14 @@ namespace DotNet_OneToMany_Dish.Migrations
                     Tastiness = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    ChefNameId = table.Column<int>(type: "int", nullable: false)
+                    ChefId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Dishes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Dishes_Chefs_ChefNameId",
-                        column: x => x.ChefNameId,
+                        name: "FK_Dishes_Chefs_ChefId",
+                        column: x => x.ChefId,
                         principalTable: "Chefs",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -59,9 +59,9 @@ namespace DotNet_OneToMany_Dish.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Dishes_ChefNameId",
+                name: "IX_Dishes_ChefId",
                 table: "Dishes",
-                column: "ChefNameId");
+                column: "ChefId");
         }
 
         /// <inheritdoc />
