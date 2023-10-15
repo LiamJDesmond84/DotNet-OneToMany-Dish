@@ -1,4 +1,4 @@
-﻿@model List<Chef>
+﻿@model List<Dish>
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
@@ -11,12 +11,9 @@
 
         foreach(var x in Model)
         {
-            <p>@x.Name</p>
+            <p>@x.Chef.Name</p>
+            <p>@x.Description</p>
 
-            foreach (var y in x.Dishes)
-            {
-                <p>@y.Description</p>
-            }
         }
 
 

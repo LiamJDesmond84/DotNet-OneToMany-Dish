@@ -23,9 +23,10 @@ public class HomeController : Controller
     [HttpGet("")]
     public IActionResult Index()
     {
-        List<Chef> chefs = _context.Chefs.ToList();
+        //List<Chef> chefs = _context.Chefs.ToList();
+        List<Dish> dishes = _context.Dishes.ToList();
 
-        return View(chefs);
+        return View(dishes);
     }
 
     public IActionResult Privacy()
