@@ -106,7 +106,7 @@ public class HomeController : Controller
         var dishToUpdate = _context.Dishes.FirstOrDefault(x => x.Id == dish.Id);
 
         dishToUpdate.Description = dish.Description;
-        dishToUpdate.Chef = dish.Chef;
+        dishToUpdate.ChefId = dish.ChefId;
         dishToUpdate.Tastiness = dish.Tastiness;
         dishToUpdate.Name = dish.Name;
 
