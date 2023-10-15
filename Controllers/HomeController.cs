@@ -23,7 +23,7 @@ public class HomeController : Controller
     [HttpGet("")]
     public IActionResult Index()
     {
-        //List<Chef> chefs = _context.Chefs.ToList();
+        //List<Chef> chefs = _context.Chefs.Include(x => x.Dishes).ToList();
         List<Dish> dishes = _context.Dishes.Include(x => x.Chef).ToList();
 
         return View(dishes);
