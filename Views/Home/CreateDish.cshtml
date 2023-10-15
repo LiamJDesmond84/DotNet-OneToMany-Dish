@@ -15,9 +15,12 @@
         <label asp-for="Description">Description</label>
         <input asp-for="Description" type="text" />
 
-        <label asp-for="Description">Chef</label>
+        <label asp-for="Chef">Chef</label>
+        <input asp-for="Chef" type="text" value="1"/>
+
+@*         <label asp-for="Description">Chef</label>
         @* @Html.DropDownListFor(x => x.Chef, new SelectList(ViewBag.Chefs)) *@
-        <select name="Chef">
+        <select asp-for="Chef" name="ChefId">
 
             @{
                 foreach(var x in ViewBag.Chefs)
@@ -26,7 +29,7 @@
                 }
             }
            
-        </select>
+        </select> *@
 
         <button type="submit">Create Dish</button>
     </form>
