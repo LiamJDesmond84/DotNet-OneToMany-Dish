@@ -17,7 +17,7 @@
 
         <label asp-for="Description">Chef</label>
         @* @Html.DropDownListFor(x => x.Chef, new SelectList(ViewBag.Chefs)) *@
-        <select asp-for="Chef" name="Chef">
+        <select asp-for="ChefId" name="Chef">
 
             @{
                 foreach(var x in ViewBag.Chefs)
